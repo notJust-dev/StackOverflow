@@ -1,0 +1,247 @@
+{
+  "items": [
+    {
+      "is_accepted": true,
+      "score": 1068,
+      "creation_date": 1452110654,
+      "answer_id": 34641772,
+      "question_id": 34641582,
+      "body_markdown": "[ReactJS][1] is a JavaScript library, supporting both front-end web and being run on a server, for building user interfaces and web applications. It follows the concept of reusable components.\r\n\r\n[React Native][2] is a mobile framework that makes use of the JavaScript engine available on the host, allowing you to build mobile applications for different platforms (iOS, Android, and Windows Mobile) in JavaScript that allows you to use ReactJS to build reusable components and communicate with native components [further explanation][3]\r\n\r\nBoth follow the JSX syntax extension of JavaScript. Which compiles to `React.createElement` calls under the hood. [JSX in-depth][4]\r\n\r\nBoth are open-sourced by Facebook.\r\n\r\n\r\n  [1]: https://reactjs.org/\r\n  [2]: https://reactnative.dev/\r\n  [3]: https://stackoverflow.com/questions/41124338/does-react-native-compile-javascript-into-java-for-android\r\n  [4]: https://reactjs.org/docs/jsx-in-depth.html"
+    },
+    {
+      "is_accepted": false,
+      "score": 390,
+      "creation_date": 1477793074,
+      "answer_id": 40325439,
+      "question_id": 34641582,
+      "body_markdown": "Here is the [**React** project][1]. \r\n\r\nAt Facebook, they invented **React** so JavaScript can manipulate the website DOM faster using the virtual DOM model.\r\n\r\nDOM full refresh is slower compared to the [React virtual-dom model][2], which refreshes only parts of the page (read: partial refresh).\r\n\r\nAs you may understand from this [video][3], Facebook did not invent React because they understood immediately that the partial refresh would be faster than the conventional one. Originally they needed a way to reduce Facebook application re-build time and luckily this brought the partial DOM refresh to life.\r\n\r\n[**React native**][4] is just a consequence of React. It is a platform to build native apps using JavaScript.\r\n\r\nPrior to **React native** you needed to know Java or Kotlin for Android and Swift or Objective-C for iPhone and iPad to create native apps.\r\n\r\nWith React Native it is possible to mimic the behavior of the native app in JavaScript and in the end, you will get platform-specific code as the output. You may even mix the **native code** with JavaScript if you need to optimize your application further.\r\n\r\nAs Olivia Bishop said in the [video][3], 85% of the **React native** codebase can be shared among platforms. These would be the components applications typically use and the common logic. \r\n\r\n15% of the code is platform-specific. The platform-specific JavaScript is what gives the platform flavor ( and makes the difference in the experience ). \r\n\r\nThe cool thing is this platform-specific code &amp;mdash; is already written, so you just need to use it.\r\n\r\n\r\n  [1]: https://github.com/facebook/react\r\n  [2]: https://stackoverflow.com/questions/21109361/why-is-reacts-concept-of-virtual-dom-said-to-be-more-performant-than-dirty-mode\r\n  [3]: https://www.youtube.com/watch?v=oWPoW0gIzvs\r\n  [4]: https://github.com/facebook/react-native"
+    },
+    {
+      "is_accepted": false,
+      "score": 184,
+      "creation_date": 1492481271,
+      "answer_id": 43462422,
+      "question_id": 34641582,
+      "body_markdown": "**React:**\r\n\r\n&gt; React is a declarative, efficient, and flexible JavaScript library for\r\n&gt; building user interfaces.&lt;br&gt;\r\n\r\n**React Native:**\r\n\r\n&gt; React Native lets you\r\n&gt; build mobile apps using only JavaScript. It uses the same design as\r\n&gt; React, letting you compose a rich mobile UI from declarative\r\n&gt; components.&lt;br&gt; With React Native, you don&#39;t build a “mobile web app”,\r\n&gt; an “HTML5 app”, or a “hybrid app”. You build a real mobile app that&#39;s\r\n&gt; indistinguishable from an app built using Objective-C or Java. React\r\n&gt; Native uses the same fundamental UI building blocks as regular iOS and\r\n&gt; Android apps. You just put those building blocks together using\r\n&gt; JavaScript and React.&lt;br&gt; React Native lets you build your app faster.\r\n&gt; Instead of recompiling, you can reload your app instantly. With hot\r\n&gt; reloading, you can even run new code while retaining your application\r\n&gt; state. Give it a try - it&#39;s a magical experience.&lt;br&gt; React Native\r\n&gt; combines smoothly with components written in Objective-C, Java, or\r\n&gt; Swift. It&#39;s simple to drop down to native code if you need to optimize\r\n&gt; a few aspects of your application. It&#39;s also easy to build part of\r\n&gt; your app in React Native, and part of your app using native code\r\n&gt; directly - that&#39;s how the Facebook app works.\r\n\r\nSo basically **React** is UI library for the view of your web app, using **javascript** and **JSX**, **React native** is an extra library on the top of React, to make a native app for `iOS` and `Android` devices.&lt;br&gt;&lt;br&gt;\r\n\r\n**React** code sample:\r\n\r\n&lt;!-- language-all: lang-js --&gt;\r\n\r\n    import React, { Component } from &#39;react&#39;;\r\n    import ReactDOM from &#39;react-dom&#39;;\r\n\r\n    class Clock extends React.Component {\r\n      constructor(props) {\r\n        super(props);\r\n        this.state = {date: new Date()};\r\n      }\r\n    \r\n      componentDidMount() {\r\n        this.timerID = setInterval(\r\n          () =&gt; this.tick(),\r\n          1000\r\n        );\r\n      }\r\n    \r\n      componentWillUnmount() {\r\n        clearInterval(this.timerID);\r\n      }\r\n    \r\n      tick() {\r\n        this.setState({\r\n          date: new Date()\r\n        });\r\n      }\r\n    \r\n      render() {\r\n        return (\r\n          &lt;div&gt;\r\n            &lt;h1&gt;Hello, world!&lt;/h1&gt;\r\n            &lt;h2&gt;It is {this.state.date.toLocaleTimeString()}.&lt;/h2&gt;\r\n          &lt;/div&gt;\r\n        );\r\n      }\r\n    }\r\n\r\n    ReactDOM.render(\r\n      &lt;Clock /&gt;,\r\n      document.getElementById(&#39;root&#39;)\r\n    );\r\n\r\n**React Native** code sample:\r\n\r\n    import React, { Component } from &#39;react&#39;;\r\n    import { Text, View } from &#39;react-native&#39;;\r\n    \r\n    class WhyReactNativeIsSoGreat extends Component {\r\n      render() {\r\n        return (\r\n          &lt;View&gt;\r\n            &lt;Text&gt;\r\n              If you like React on the web, you&#39;ll like React Native.\r\n            &lt;/Text&gt;\r\n            &lt;Text&gt;\r\n              You just use native components like &#39;View&#39; and &#39;Text&#39;,\r\n              instead of web components like &#39;div&#39; and &#39;span&#39;.\r\n            &lt;/Text&gt;\r\n          &lt;/View&gt;\r\n        );\r\n      }\r\n    }\r\n\r\nFor more information about **React**, visit their official website created by facebook team:\r\n\r\nhttps://reactjs.org/\r\n\r\nFor more information about **React Native**, visit React native website below:\r\n\r\nhttps://reactnative.dev/\r\n\r\n\r\n"
+    },
+    {
+      "is_accepted": false,
+      "score": 99,
+      "creation_date": 1531597988,
+      "answer_id": 51342875,
+      "question_id": 34641582,
+      "body_markdown": "**First, the similarities:** Both React &amp; React Native (RN) were designed to create flexible user interfaces. There are tons of benefits to these frameworks, but the most fundamental take-away is that they&#39;re made for UI development. Facebook developed RN a few years after React.\r\n\r\n**React:**\r\nFacebook designed this framework to be almost like writing your JavaScript inside your HTML/XML, which is why the tags are called &quot;*JSX*&quot; (JavaScript XML) and are similar to the familiar HTML-like tags such as `&lt;div&gt;` or `&lt;p&gt;`. A hallmark of React is the capital-letter tags that denote a custom component, such as `&lt;MyFancyNavbar /&gt;`, which also exists in RN. However, React uses [the DOM][1]. The DOM exists for HTML, thus React is used for web development.\r\n\r\n**React Native:**\r\nRN does not use HTML, and therefore is not used for web development. It is used for... virtually everything else! Mobile development (both iOS &amp; Android), smart devices (e.g. watches, TVs), augmented reality, etc. As RN has no DOM to interact with, instead of using the same sort of HTML tags used in React, it uses its tags which are then compiled into other languages. For example, instead of `&lt;div&gt;` tags, RN developers use RN&#39;s built-in `&lt;View&gt;` tag, which compiles into other native code under the hood (e.g. `android.view` on Android; and `UIView` on iOS).\r\n\r\n*In short: they&#39;re very similar (for UI development) but used for different mediums.*\r\n\r\n\r\n  [1]: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction"
+    },
+    {
+      "is_accepted": false,
+      "score": 70,
+      "creation_date": 1471666388,
+      "answer_id": 39050403,
+      "question_id": 34641582,
+      "body_markdown": "ReactJS is a framework for building a hierarchy of UI components. Each component has state and props. Data flows from the top to low-level components via props. The state is updated in the top-level component using event handlers.\r\n\r\nReact native uses React framework for building components for mobile apps. React native provides a basic set of components for both iOS and Android platforms. Some of the components in React Native are Navigator, TabBar, Text, TextInput, View, ScrollView. These components use native iOS UIKit and Android UI components internally. React native also allows NativeModules where code written in Objective-C for iOS and Java for Android can be used within JavaScript.\r\n\r\nNote: React Native as a framework allows for the development of mobile apps in a similar syntax to HTML and CSS. React Native components effectively replace HTML in native development."
+    },
+    {
+      "is_accepted": false,
+      "score": 51,
+      "creation_date": 1489132301,
+      "answer_id": 42713039,
+      "question_id": 34641582,
+      "body_markdown": "1. React-Native is a framework for developing Android &amp; iOS applications which shares 80% - 90% of Javascript code. \r\n\r\nWhile React.js is a parent Javascript library for developing web applications. \r\n\r\n2. While you use tags like `&lt;View&gt;`, `&lt;Text&gt;` very frequently in React-Native, React.js uses web html tags like `&lt;div&gt;` `&lt;h1&gt;` `&lt;h2&gt;`, which are only synonyms in dictionary of web/mobile developments.\r\n\r\n3. For React.js you need DOM for path rendering of html tags, while for mobile application: React-Native uses AppRegistry to register your app.\r\n\r\nI hope this is an easy explanation for quick differences/similarities in React.js and React-Native."
+    },
+    {
+      "is_accepted": false,
+      "score": 43,
+      "creation_date": 1537477060,
+      "answer_id": 52433206,
+      "question_id": 34641582,
+      "body_markdown": "We can&#39;t compare them exactly. There are **differences in use case**.\n\n(2018 update) \n\n\n----------\n\n\nReactJS\n-------\n\nReact has as its main focus **Web Development.**\n\n1. - **React’s virtual DOM is faster than the conventional full refresh model**, since the virtual DOM refreshes only parts of the page. \n2. - You can **reuse code components** in React, saving you a lot of time. (You can in React Native too.)\n3. - As a business: The rendering of your pages completely, from the server to the browser will **improve the SEO of your web app**.\n4. - It **improves the debugging speed** making your developer’s life easier.\n5. - You can use hybrid mobile app development, like Cordova or Ionic, to build mobile apps with React, but is more efficiently building mobile apps with React Native from many points.\n\n----------\n\n\n## React Native ##\n***An extension of React***, niched on **Mobile Development.**\n\n1. - Its main focus is all about **Mobile User Interfaces**.\n2. - **iOS &amp; Android** are covered.\n3. - **Reusable** React Native UI **components &amp; modules** allow hybrid apps to render natively.\n4. - No need to overhaul your old app. All you have to do is **add React Native UI components into your existing app’s code**, without having to rewrite.\n5. - **Doesn&#39;t use HTML to render the app**. Provides alternative components that work in a similar way, so it wouldn&#39;t be hard to understand them.\n6. - Because your code doesn’t get rendered in an HTML page, this also means you **won’t be able to reuse any libraries you previously used with React** that renders any kind of HTML, SVG or Canvas.\n7. - React Native is not made from web elements and can’t be styled in the same way. **Goodbye CSS Animations!**\n\n\n----------\nHopefully I helped you :)"
+    },
+    {
+      "is_accepted": false,
+      "score": 43,
+      "creation_date": 1589022261,
+      "answer_id": 61695694,
+      "question_id": 34641582,
+      "body_markdown": "I know there are already many answers to it but after reading all these I felt no one explains the architectural difference between these two and how these two works so I believe there is still room for explanation.\r\n\r\n**React**\r\n\r\n**React = Vanilla JS + ES6 + HTML + CSS = JSX = Web Apps(Front end)** \r\n\r\nSo let&#39;s talk about **React** first because **React-Native** is also based on **react** and the same concept of JS is been used there.\r\n\r\nReact is a **JS** library that is used to make **beautiful, flexible, performant** **single page web applications**, So now a question will appear in your mind what is **single page web app**?\r\n\r\n**Single-Page Application**\r\n\r\n\r\nA single-page application is an app that works inside a browser and does not require page reloading during use. You are using these types of applications every day. These are, for instance: **Gmail, Google Maps, Facebook, or GitHub**.\r\nSPAs are all about serving an outstanding UX by trying to imitate a “natural” environment in the browser — no page reloads, no extra wait time. It is just one web page that you visit which then loads all other content using JavaScript — which they heavily depend on.\r\nSPA requests the markup and data independently and renders pages straight in the browser. We can do this thanks to advanced JavaScript frameworks like AngularJS, Ember.js, Meteor.js, Knockout.js, React.js, and Vue.js.\r\nSingle-page sites help keep the user in one, comfortable web space where content is presented to the user in a simple, easy, and workable fashion.\r\n\r\n**How it works**\r\n\r\nNow you know what is SPA, So as you know it&#39;s a web app so it will use HTML elements for running into the browser and also use JS for handling all the functionality related to these elements.\r\nIt used **Virtual DOM** to render new changes in the components. \r\n\r\n\r\n**React-Native**\r\n\r\nNow you have a bit of an idea about **react** so let&#39;s talk about  **react-native**\r\n\r\n**React-Native = React (Vanilla JS + ES6 + Bridge between JS and Native code) + Native(iOS, Android) = Mobile Apps(Android, iOS, also supported web but have some limitations)**\r\n\r\n\r\nReact-Native is used to make beautiful cross-platform mobile apps(Android, iOS) using React.\r\n\r\n**How it works**\r\n\r\nIn React-Native there are two threads.\r\n\r\n 1. JS Thread\r\n\r\n 2. Native Thread\r\n\r\nAll of the React code is executed inside the **JS thread** and the final value passes to the **native thread** which draws a layout on the screen with the final value.\r\n\r\nJS thread performs all of the calculations and passes data to the native,  How?\r\n\r\n**React uses an Async Bridge to pass data to a Native thread in JSON format is called React-Native**\r\n\r\n**NOTE: New architecture does not rely on the bridges anymore it used JSI and fabric for the communication between native and JS code which happened synchronously(it&#39;s explained in the below section).** \r\n\r\nSo we use Native components for making a presentational view in react-native and use that bridge to communicate between these two different worlds.\r\n\r\nJS thread is fast enough to execute JavaScript and the native thread is also fast enough to execute native code but as React used the async bridge to communicate between these two worlds, overloading this bridge causes performance issues.\r\n\r\n****Update:**** \r\nReact-Native is now going through a re-architecture phase and the Facebook team is trying to remove the async bridge to communicate between JS and native synchronously the major part of this re-architecture is JSI(Javascript interface) and fabric.\r\n\r\n**JSI:** JSI removes the need for a bridge between Native(Java/ObjC) and Javascript code. It also removes the requirement to serialize/deserialize all the information as JSON for communication between the two worlds. JSI is opening doors to new possibilities by bringing close the javascript and the native worlds.\r\n\r\nBelow are the main things which JSI offers. \r\n\r\n 1. Javascript Interface which allows us to register methods with the Javascript runtime. These methods are available via the global object in the Javascript world.\r\n\r\n 2. The methods can be entirely written in C++ or they can be a way to communicate with Objective C code on iOS and Java code on Android.\r\n\r\n 3. Any native module that is currently using the traditional bridge for communication between Javascript and the native worlds can be converted to a JSI module by writing a simple layer in C++\r\nOn iOS writing, this layer is simple because C++ can run directly in Objective C hence all the iOS frameworks and code is available to use now.\r\n 4. On android however we have to go the extra mile to do this through JNI.\r\n\r\n 5. These methods can be fully synchronous which means using async/await is not mandatory.\r\n\r\n**Fabric:** Fabric is a new UI layer that allows us to communicate with the native UI components synchronously, According to the [docs][1].\r\n\r\n&gt; Fabric is React Native&#39;s new rendering system, a conceptual evolution of the legacy render system. The core principles are to unify more render logic in C++, improve interoperability with host platforms, and unlock new capabilities for React Native. Development began in 2018 and in 2021, React Native in the Facebook app is backed by the new renderer.\r\n\r\n\r\n\r\n\r\n\r\nLet&#39;s talk about the common and differences between these two frameworks.\r\n\r\n\r\n\r\n| Feature     |       React     |    React-Native   |\r\n| :---------: | :--------------:| :---------------: |\r\n| Platform    |     Web         | Android, IOS, Web |\r\n| Open Source |      Yes        |        Yes        |\r\n| User Interface|  HTML + CSS   | Native Components(iOS, Android, Web)|\r\n| Architecture   | Virtual DOM   |  Virtual DOM + Bridge + Native implementation |\r\n| Animations    | CSS Animations  | Native Animations   |\r\n| Styling   | CSS            |   JS Stylesheets      |\r\n| Developed By    | Facebook  |      Facebook    |\r\n\r\n\r\n  [1]: https://reactnative.dev/docs/fabric-renderer"
+    },
+    {
+      "is_accepted": false,
+      "score": 25,
+      "creation_date": 1491235528,
+      "answer_id": 43189347,
+      "question_id": 34641582,
+      "body_markdown": "In a simple sense, React and React native follows the same design principles except in the case of designing user interface.\r\n\r\n 1. React native has a separate set of tags for defining user\r\n    interface for mobile, but both use JSX for defining components.\r\n 2. Both systems main intention is to develop re-usable UI-components and reduce development effort by its compositions.\r\n 3. If you plan &amp; structure code properly you can use the same business logic for mobile and web\r\n\r\nAnyway, it&#39;s an excellent library to build user interface for mobile and web.\r\n \r\n\r\n"
+    },
+    {
+      "is_accepted": false,
+      "score": 21,
+      "creation_date": 1503981070,
+      "answer_id": 45930708,
+      "question_id": 34641582,
+      "body_markdown": "React is a declarative, efficient, and flexible JavaScript library for building user interfaces.Your components tell React what you want to render – then React will efficiently update and render just the right components when your data changes. Here, ShoppingList is a React component class, or React component type.\r\n\r\nA React Native app is a real mobile app. With React Native, you don&#39;t build a “mobile web app”, an “HTML5 app”, or a “hybrid app”. You build a real mobile app that&#39;s indistinguishable from an app built using Objective-C or Java. React Native uses the same fundamental UI building blocks as regular iOS and Android apps.\r\n\r\n[More info][1]\r\n\r\n\r\n  [1]: https://medium.com/@alexmngn/from-reactjs-to-react-native-what-are-the-main-differences-between-both-d6e8e88ebf24"
+    },
+    {
+      "is_accepted": false,
+      "score": 18,
+      "creation_date": 1492552239,
+      "answer_id": 43482796,
+      "question_id": 34641582,
+      "body_markdown": "ReactJS is a core framework, meant to build component isolated based on reactive pattern, you can think of it as the V from MVC, although I would like to state that react does brings a different feel, specially if you are less familiar with reactive concept. \r\n\r\nReactNative is another layer that is meant to have a set component for Android and iOS platform that are common. So the code looks basically the same as ReactJS because is ReactJS, but it load natively in mobile platforms. You can also bridge more complex and platform relative API with Java/Objective-C/Swift depending on the OS and use it within React."
+    },
+    {
+      "is_accepted": false,
+      "score": 18,
+      "creation_date": 1495454704,
+      "answer_id": 44112436,
+      "question_id": 34641582,
+      "body_markdown": "**React Native** is primarily developed in JavaScript, which means that most of the code you need to get started can be shared across platforms. React Native will render using native components. React Native apps are developed in the language required by the platform it targets, Objective-C or Swift for iOS, Java for Android, etc. The code written is not shared across platforms and their behavior varies. They have direct access to all features offered by the platform without any restriction.\r\n\r\n**React** is an open-source JavaScript library developed by Facebook for building user interfaces. It&#39;s used for handling view layer for web and mobile apps. ReactJS used to create reusable UI components.It is currently one of the most popular JavaScript libraries in the it field and it has strong foundation and large community behind it.If you learn ReactJS, you need to have knowledge of JavaScript, HTML5 and CSS."
+    },
+    {
+      "is_accepted": false,
+      "score": 17,
+      "creation_date": 1494814521,
+      "answer_id": 43970684,
+      "question_id": 34641582,
+      "body_markdown": "**React** is the base abstraction of **React Native** and **React DOM**, so if your going to work with React Native you will also need React... same with the web but instead of React Native you will need React DOM.\r\n\r\nSince React is the base abstraction the general syntax and workflow is the same but the components that you would use are very different thus you will need to learn those differences this is inline with React so called moto which is &quot;Learn once write anywhere&quot; because if you know React(base abstraction) you could simply learn the differences between platform without learning another programming language, syntax and workflow."
+    },
+    {
+      "is_accepted": false,
+      "score": 14,
+      "creation_date": 1488803102,
+      "answer_id": 42625612,
+      "question_id": 34641582,
+      "body_markdown": "React-Native is a framework, where ReactJS is a javascript library you can use for your website. \r\n\r\nReact-native provides default core components (images, text), where React provides a bunch of components and make them work together."
+    },
+    {
+      "is_accepted": false,
+      "score": 14,
+      "creation_date": 1502234991,
+      "answer_id": 45579478,
+      "question_id": 34641582,
+      "body_markdown": "React Native is for mobile applications while React is for websites(front-end).  Both are frameworks invented by Facebook. React Native is a cross platform developing framework meaning one could write almost the same code for both IOS and Android and it would work. I personally know much more about React Native so I will leave it at this. "
+    },
+    {
+      "is_accepted": false,
+      "score": 12,
+      "creation_date": 1488458776,
+      "answer_id": 42555935,
+      "question_id": 34641582,
+      "body_markdown": "React Js is a Javascript Library where you can develop and run faster web applications using React .\r\n\r\n\r\nReact Native lets you build mobile apps using only JavaScript,it is used for Mobile application development . more info here https://facebook.github.io/react-native/docs/getting-started.html\r\n\r\n"
+    },
+    {
+      "is_accepted": false,
+      "score": 11,
+      "creation_date": 1501013527,
+      "answer_id": 45312661,
+      "question_id": 34641582,
+      "body_markdown": "In regards to component lifecycle and all the other bells and whistles it is mostly the same.  \r\n\r\nThe difference mostly is the JSX markup used. React uses one that resembles html. The other is markup that is used by react-native to display the view.\r\n\r\n"
+    },
+    {
+      "is_accepted": false,
+      "score": 9,
+      "creation_date": 1555528955,
+      "answer_id": 55734637,
+      "question_id": 34641582,
+      "body_markdown": "React Js is manipulating with HTML Dom.\r\nBut React native is manipulating with mobile(iOS/android) native ui component. "
+    },
+    {
+      "is_accepted": false,
+      "score": 8,
+      "creation_date": 1572239561,
+      "answer_id": 58586035,
+      "question_id": 34641582,
+      "body_markdown": "A little late to the party, but here&#39;s a more comprehensive answer with examples:\n\n# React\nReact is a component based UI library that uses a &quot;shadow DOM&quot; to efficiently update the DOM with what has changed instead of rebuilding the entire DOM tree for every change. It was initially built for web apps, but now can be used for mobile &amp; 3D/vr as well.\n\nComponents between React and React Native cannot be interchanged because React Native maps to native mobile UI elements but business logic and non-render related code can be re-used.\n\n# ReactDOM\nWas initially included with the React library but was split out once React was being used for other platforms than just web. It serves as the entry point to the DOM and is used in union with React.\n\nExample:\n```\nimport React from &#39;react&#39;;\nimport ReactDOM from &#39;react-dom&#39;;\n\nclass App extends Component {\n    state = {\n        data: [],\n    }\n\n    componentDidMount() {\n        const data = API.getData(); // fetch some data\n        this.setState({ data })\n    }\n\n    clearData = () =&gt; {\n        this.setState({\n            data: [],\n        });\n    }\n\n    render() {\n        return (\n            &lt;div&gt;\n                {this.state.data.map((data) =&gt; (\n                    &lt;p key={data.id}&gt;{data.label}&lt;/p&gt;\n                ))}\n                &lt;button onClick={this.clearData}&gt;\n                    Clear list\n                &lt;/button&gt;\n            &lt;/div&gt;\n        );\n    }\n\n}\n\nReactDOM.render(App, document.getElementById(&#39;app&#39;));\n```\n# React Native\nReact Native is a cross-platform mobile framework that uses React and communicates between Javascript and it&#39;s native counterpart via a &quot;bridge&quot;. Due to this, a lot of UI structuring has to be different when using React Native. For example: when building a list, you will run into major performance issues if you try to use `map` to build out the list instead of React Native&#39;s `FlatList`. React Native can be used to build out IOS/Android mobile apps, as well as for smart watches and TV&#39;s.\n\n### Expo\nExpo is the go-to when starting a new React Native app.\n&gt; Expo is a framework and a platform for universal React applications. It is a set of tools and services built around React Native and native platforms that help you develop, build, deploy, and quickly iterate on iOS, Android, and web apps\n\n**Note:** When using Expo, you can only use the Native Api&#39;s they provide. All additional libraries you include will need to be pure javascript or you will need to eject expo.\n\nSame example using React Native:\n```\nimport React, { Component } from &#39;react&#39;;\nimport { Flatlist, View, Text, StyleSheet } from &#39;react-native&#39;;\n\nexport default class App extends Component {\n    state = {\n        data: [],\n    }\n\n    componentDidMount() {\n        const data = API.getData(); // fetch some data\n        this.setState({ data })\n    }\n\n    clearData = () =&gt; {\n        this.setState({\n            data: [],\n        });\n    }\n\n    render() {\n        return (\n            &lt;View style={styles.container}&gt;\n                &lt;FlatList\n                    data={this.state.data}\n                    renderItem={({ item }) =&gt; &lt;Text key={item.id}&gt;{item.label}&lt;/Text&gt;}\n                /&gt;\n                &lt;Button title=&quot;Clear list&quot; onPress={this.clearData}&gt;&lt;/Button&gt;\n            &lt;/View&gt;\n        );\n    }\n\n}\n\nconst styles = StyleSheet.create({\n    container: {\n        flex: 1,\n    },\n});\n```\n### Differences:\n - Notice that everything outside of render can remain the same, this is why business logic/lifecycle logic code can be re-used across React and React Native\n - In React Native all components need to be imported from react-native or another UI library\n - Using certain API&#39;s that map to native components are usually going to be more performant than trying to handle everything on the javascript side. ex. mapping components to build a list vs using flatlist\n - Subtle differences: things like `onClick` turn into `onPress`, React Native uses stylesheets to define styles in a more performant way, and React Native uses flexbox as the default layout structure to keep things responsive.\n - Since there is no traditional &quot;DOM&quot; in React Native, only pure javascript libraries can be used across both React and React Native\n\n# React360\nIt&#39;s also worth mentioning that React can also be used to develop 3D/VR applications. The component structure is very similar to React Native. https://facebook.github.io/react-360/"
+    },
+    {
+      "is_accepted": false,
+      "score": 7,
+      "creation_date": 1521091393,
+      "answer_id": 49292117,
+      "question_id": 34641582,
+      "body_markdown": "**ReactJS** is a *javascript library* which is used to build web interfaces. You would need a bundler like webpack and try to install modules you would need to build your website.\r\n\r\n**React Native** is a *javascript framework* and it comes with everything you need to write multi-platform apps (like iOS or Android). You would need xcode and android studio installed to build and deploy your app.\r\n\r\nUnlike ReactJS, React-Native doesn&#39;t use HTML but similar components that you can use accross ios and android to build your app. These components use real native components to build the ios and android apps. Due to this React-Native apps feel real unlike other Hybrid development platforms. Components also increases reusability of your code as you don&#39;t need to create same user interface again on ios and android."
+    },
+    {
+      "is_accepted": false,
+      "score": 7,
+      "creation_date": 1552722223,
+      "answer_id": 55194561,
+      "question_id": 34641582,
+      "body_markdown": "In simple terms \r\nReactJS is parent library which returns something to render as per the host-environment(browser, mobile, server, desktop..etc).\r\nApart from rendering it also provides other methods like lifecycle hooks.. etc.\r\n\r\nIn the browser, it uses another library react-dom to render DOM elements.\r\nIn mobile, it uses React-Native components to render platform specific(Both IOS and Android) native UI components.\r\nSO,\r\n\r\nreact + react-dom = web developement\r\n\r\nreact + react-native = mobile developement  "
+    },
+    {
+      "is_accepted": false,
+      "score": 5,
+      "creation_date": 1577524136,
+      "answer_id": 59509513,
+      "question_id": 34641582,
+      "body_markdown": "[![React vs React Native][1]][1]\r\n\r\n\r\n**ReactJS**\r\n\r\n- React is used for creating websites, web apps, SPAs etc.\r\n- React is a Javascript library used for creating UI hierarchy.\r\n- It is responsible for rendering of UI components, It is considered as V part Of MVC framework.\r\n- React’s virtual DOM is faster than the conventional full refresh model, since the virtual DOM refreshes only parts of the page, Thus decreasing the page refresh time.\r\n- React uses components as basic unit of UI which can be reused this saves coding time.\r\nSimple and easy to learn.\r\n\r\n \r\n\r\n\r\n  [1]: https://i.stack.imgur.com/j3TPA.png\r\n**React Native**\r\n\r\n- React Native is a framework that is used to create cross-platform Native apps. It means you can create native apps and the same app will run on Android and ios.\r\n- React native have all the benefits of ReactJS\r\n- React native allows developers to create native apps in web-style approach.\r\n"
+    },
+    {
+      "is_accepted": false,
+      "score": 4,
+      "creation_date": 1522086612,
+      "answer_id": 49497607,
+      "question_id": 34641582,
+      "body_markdown": "[**REACT**][1] is Javascript library to build large/small interface web application like Facebook.\r\n\r\n[**REACT NATIVE**][2] is Javascript framework to develop native mobile application on Android, IOS, and Windows Phone.\r\n\r\nBoth are open sourced by Facebook.\r\n\r\n \r\n\r\n\r\n  [1]: https://reactjs.org/tutorial/tutorial.html\r\n  [2]: https://facebook.github.io/react-native/"
+    },
+    {
+      "is_accepted": false,
+      "score": 4,
+      "creation_date": 1607085653,
+      "answer_id": 65143752,
+      "question_id": 34641582,
+      "body_markdown": "Here is a very nice explanation:\r\n\r\n&gt; **Reactjs** is a JavaScript library that supports both front-end and server. Furthermore, it can be used to create user interfaces for mobile apps and websites.\r\n\r\n\r\n&gt; **React Native** is a cross-platform mobile framework that uses Reactjs for building apps and websites. React Native compiles to native app components enables the programmer to build mobile applications that can run on different platforms such as Windows, Android, iOS in JavaScript.\r\n\r\n - Reactjs can be described as a base derivative of React DOM, for the web platform while React Native is a base derivative in itself, which means that the syntax and workflow remain the same, but components alter.\r\n\r\n - Reactjs, eventually, is a JavaScript library, which enables the programmer to create an engaging and high performing UI Layer while React Native is an entire framework for building cross-platform apps, be it web, iOS or Android. \r\n\r\n - In Reactjs, virtual DOM is used to render browser code in Reactjs while in React Native, native APIs are used to render components in mobile.\r\n\r\n - The apps developed with Reactjs renders HTML in UI while React Native uses JSX for rendering UI, which is nothing but javascript. \r\n\r\n - CSS is used for creating styling in Reactjs while a stylesheet is used for styling in React Native.\r\n\r\n - In Reactjs, the animation is possible, using CSS, just like web development while in React Native, an animated API is used for inducing animation across different components of the React Native application.\r\n\r\n - If the need is to build a high performing, dynamic, and responsive UI for web interfaces, then Reactjs is the best option while if the need is to give mobile apps a truly native feeling, then React Native is the best option.\r\n\r\nMore here: https://www.simform.com/reactjs-vs-reactnative/"
+    },
+    {
+      "is_accepted": false,
+      "score": 3,
+      "creation_date": 1526502072,
+      "answer_id": 50379307,
+      "question_id": 34641582,
+      "body_markdown": "Here are the differences that I know about: \r\n\r\n 1. They have different html tags: React Native is using &lt;Text&gt; for handling text and &lt;View&gt; instead of &lt;div&gt; in React.\r\n 2. React Native is using Touchable components instead of a regular button\r\nelement.\r\n 3. React Native has ScrollView and FlatList components for rendering lists.\r\n 4. React Native is using AsyncStorage while React is using local storage.\r\n 5. In React Native routers function as a stack, while in React, we use Route components for mapping navigation.\r\n\r\n "
+    },
+    {
+      "is_accepted": false,
+      "score": 3,
+      "creation_date": 1551451394,
+      "answer_id": 54946892,
+      "question_id": 34641582,
+      "body_markdown": "In summary: React.js for Web Development while React-Native for Mobile App Development"
+    },
+    {
+      "is_accepted": false,
+      "score": 3,
+      "creation_date": 1562326742,
+      "answer_id": 56902362,
+      "question_id": 34641582,
+      "body_markdown": "**React Js** - React JS is front-end javascript library it&#39;s large library not a framework \r\n\r\n - It follows the component based approach which helps in building      \r\n   reusable UI components\r\n      - It is used for developing complex and interactive web and mobile UI\r\n      - Even though it was open-sourced only in 2015, it has one of the largest communities supporting it.\r\n\r\n**ReactNative** - React Native is an open-source mobile application framework. "
+    },
+    {
+      "is_accepted": false,
+      "score": 3,
+      "creation_date": 1570558309,
+      "answer_id": 58291895,
+      "question_id": 34641582,
+      "body_markdown": "Some differences are as follows:  \r\n**1-** React-Native is a framework which used to create Mobile Apps, where ReactJS is a javascript library you can use for your website.   \r\n**2-** React-Native doesn’t use HTML to render the app while React uses.    \r\n**3-** React-Native used for developing only Mobile App while React use for website and Mobile."
+    },
+    {
+      "is_accepted": false,
+      "score": 3,
+      "creation_date": 1591294118,
+      "answer_id": 62201382,
+      "question_id": 34641582,
+      "body_markdown": "A simple comparison should be\r\n\r\n**ReactJs**\r\n\r\n    return(\r\n        &lt;div&gt;\r\n          &lt;p&gt;Hello World&lt;/p&gt;\r\n        &lt;/div&gt;\r\n    )\r\n\r\n**React Native**\r\n\r\n    return(\r\n        &lt;View&gt;\r\n          &lt;Text&gt;Hello World&lt;/Text&gt;\r\n        &lt;/View&gt;\r\n    )\r\n\r\nReact Native don&#39;t have Html Elements like `div`, `p`, `h1`, etc, instead it have components that make sense for mobile.  \r\nMore details at https://reactnative.dev/docs/components-and-apis"
+    },
+    {
+      "is_accepted": false,
+      "score": 3,
+      "creation_date": 1604159305,
+      "answer_id": 64623556,
+      "question_id": 34641582,
+      "body_markdown": "**React Native** is a *JavaScript framework* and it comes with everything you need to write multi-platform apps *(like iOS or Android)*.\r\n\r\n\r\n**ReactJS** is a *JavaScript library* which is used to build web interfaces and build your website."
+    }
+  ],
+  "has_more": true,
+  "quota_max": 300,
+  "quota_remaining": 277
+}
