@@ -1,0 +1,64 @@
+type Question {
+  question_id: Int!
+  creation_date: Int!
+  title: String!
+  body_markdown: String!
+  score: Int!
+  answer_count: Int!
+  view_count: Int!
+  tags: [String!]!
+  is_answered: Boolean!
+  link: String!
+
+  answers: [Answer]
+    @materializer(
+      query: "answers { items }"
+      arguments: [{ name: "questionId", field: "question_id" }]
+    )
+}
+
+type Answer {
+  answer_id: Int!
+  creation_date: Int!
+  body_markdown: String!
+  score: Int!
+  is_accepted: Boolean
+  question_id: Int!
+}
+
+type QuestionsResponse {
+  has_more: Boolean!
+  quota_max: Int!
+  quota_remaining: Int!
+  items: [Question]
+}
+
+type AnswersResponse {
+  has_more: Boolean!
+  quota_max: Int!
+  quota_remaining: Int!
+  items: [Answer]
+}
+
+enum QuestionSort {
+  activity
+  creation
+  votes
+  hot
+}
+
+type Query {
+  questions(sort: QuestionSort!): QuestionsResponse
+    @rest(
+      endpoint: "https://api.stackexchange.com/2.3/questions?order=desc&sort=$sort&tagged=react-native&site=stackoverflow&filter=!0WVkZUE2aUd61A)oNLydqYFhc"
+    )
+  question(questionId: Int!): QuestionsResponse
+    @rest(
+      endpoint: "https://api.stackexchange.com/2.3/questions/$questionId?order=desc&sort=votes&site=stackoverflow&filter=!0WVkZUE2aUd61A)oNLydqYFhc"
+    )
+
+  answers(questionId: Int): AnswersResponse
+    @rest(
+      endpoint: "https://api.stackexchange.com/2.3/questions/$questionId/answers?order=desc&sort=votes&site=stackoverflow&filter=!3vByVnFcNyZ01KAKv"
+    )
+}
