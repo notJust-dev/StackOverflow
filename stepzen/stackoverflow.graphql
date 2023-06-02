@@ -61,4 +61,9 @@ type Query {
     @rest(
       endpoint: "https://api.stackexchange.com/2.3/questions/$questionId/answers?order=desc&sort=votes&site=stackoverflow&filter=!3vByVnFcNyZ01KAKv"
     )
+
+  search(term: String!): QuestionsResponse
+    @rest(
+      endpoint: "https://api.stackexchange.com/2.3/search?order=desc&sort=votes&intitle=$term&site=stackoverflow&filter=!0WVkZUE2aUd61A)oNLydqYFhc"
+    )
 }

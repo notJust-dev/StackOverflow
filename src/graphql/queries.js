@@ -46,3 +46,20 @@ export const getQuestionQuery = gql`
     }
   }
 `;
+
+export const searchQuery = gql`
+  query MyQuery($term: String!) {
+    search(term: $term) {
+      items {
+        answer_count
+        body_markdown
+        creation_date
+        question_id
+        score
+        tags
+        title
+        view_count
+      }
+    }
+  }
+`;
