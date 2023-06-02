@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet } from 'react-native';
 import { Link } from 'expo-router';
+import { decode } from 'html-entities';
 
 const QuestionListItem = ({ question }) => {
   return (
@@ -10,9 +11,9 @@ const QuestionListItem = ({ question }) => {
           {question.view_count} views
         </Text>
 
-        <Text style={styles.title}>{question.title}</Text>
+        <Text style={styles.title}>{decode(question.title)}</Text>
         <Text style={styles.body} numberOfLines={2}>
-          {question.body_markdown}
+          {decode(question.body_markdown)}
         </Text>
 
         {/* Tags */}
