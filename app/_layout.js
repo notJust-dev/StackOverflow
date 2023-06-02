@@ -1,10 +1,14 @@
 import { Stack } from 'expo-router';
+import client from '../src/graphql/client';
+import { Provider } from 'urql';
 
 const RootLayout = () => {
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ title: 'Home' }} />
-    </Stack>
+    <Provider value={client}>
+      <Stack>
+        <Stack.Screen name="index" options={{ title: 'Home' }} />
+      </Stack>
+    </Provider>
   );
 };
 

@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     borderBottomWidth: 0.5,
     borderColor: 'lightgray',
+    padding: 10,
   },
   leftContainer: {
     paddingHorizontal: 10,
