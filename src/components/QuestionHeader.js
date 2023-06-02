@@ -1,19 +1,20 @@
 import { Text, View, StyleSheet } from 'react-native';
 import { Link } from 'expo-router';
 
-const QuestionListItem = ({ question }) => {
+const QuestionHeader = ({ question }) => {
   return (
     <Link href={`/${question.question_id}`}>
       <View style={styles.container}>
+        <Text style={styles.title}>{question.title}</Text>
+
         <Text style={styles.stats}>
           {question.score} votes · {question.answer_count} answers ·{' '}
           {question.view_count} views
         </Text>
 
-        <Text style={styles.title}>{question.title}</Text>
-        <Text style={styles.body} numberOfLines={2}>
-          {question.body_markdown}
-        </Text>
+        <View style={styles.separator} />
+
+        <Text style={styles.body}>{question.body_markdown}</Text>
 
         {/* Tags */}
         <View style={styles.tags}>
@@ -42,13 +43,13 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   title: {
-    color: '#0063bf',
+    color: '#3b4045',
     marginVertical: 5,
+    fontSize: 20,
+    fontWeight: '500',
+    lineHeight: 28,
   },
-  body: {
-    fontSize: 11,
-    color: 'dimgray',
-  },
+  body: {},
   tags: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -69,6 +70,11 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: 'dimgray',
   },
+  separator: {
+    borderBottomWidth: 0.5,
+    borderColor: 'lightgray',
+    marginVertical: 10,
+  },
 });
 
-export default QuestionListItem;
+export default QuestionHeader;
